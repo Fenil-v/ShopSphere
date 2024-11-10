@@ -1,20 +1,22 @@
 const express = require("express");
-const app = express();
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
-// const fileUpload = require("express-fileupload");
-const path = require("path");
 const cors = require("cors");
-const morgan = require("morgan");
-const errorMiddleware = require("./middleware/error");
+var bodyParser = require("body-parser");
+const path = require("path");
 
-if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "backend/config/config.env" });
-}
+const app = express();
+require("dotenv").config();
 
-app.use(express.json());
-app.use(cookieParser());
+var corsOptions = {
+  origin: "*",
+};
+//common middleware
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
 
-module.exports = app;
+app.use("/media", express.static(path.join(__dirname, "media")));
+
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log("Server is running with PORT " + PORT);
+});
