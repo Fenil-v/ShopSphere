@@ -14,7 +14,7 @@ const ProductItem = db.ProductItem;
 exports.signupUser = async (req, res, next) => {
   try {
     // console.log(req.files);
-    console.log(req.file);
+    // console.log(req.file);
     const { vName, vEmail, vPassword } = req.body;
 
     const user = await User.findOne({ where: { vEmail } });
@@ -26,7 +26,7 @@ exports.signupUser = async (req, res, next) => {
       });
     }
 
-    console.log(req.file);
+    // console.log(req.file);
 
     const vImage = req.file ? req.file.filename : "";
 

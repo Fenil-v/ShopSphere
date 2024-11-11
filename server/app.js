@@ -16,6 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/media", express.static(path.join(__dirname, "media")));
 
+const user = require("./routes/userRoute");
+
+app.use("/user", user);
+
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log("Server is running with PORT " + PORT);
