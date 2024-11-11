@@ -11,16 +11,14 @@ const sendToken = (user, statusCode, res) => {
   console.log(token);
 
   // options for cookie
-  const options = {
-    expires: new Date(
-      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-  };
+  // const options = {
+  //   expires: Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000,
+  //   httpOnly: true,
+  // };
 
-  console.log(user.vImage);
+  // console.log(options.expires,"fenillll");
 
-  res.status(statusCode).cookie("token", token, options).json({
+  res.status(statusCode).cookie("token", token).json({
     success: true,
     status: statusCode,
     user,

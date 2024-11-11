@@ -26,8 +26,6 @@ exports.signupUser = async (req, res, next) => {
       });
     }
 
-    // console.log(req.file);
-
     const vImage = req.file ? req.file.filename : "";
 
     const newUser = await User.create({
