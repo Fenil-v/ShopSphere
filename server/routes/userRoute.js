@@ -3,7 +3,7 @@ const {
   getProfile,
   updateProfile,
   getAllUsers,
-} = require("../controllers/userControllers");
+} = require("../controller/userController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 const router = express.Router();
