@@ -267,30 +267,33 @@ db.Order.belongsTo(db.Address, {
   foreignKey: "uBillingAddressId",
 });
 
-db.User = require("./user")(sequelize, DataTypes);
-db.Address = require("./address")(sequelize, DataTypes);
-db.Brand = require("./brand")(sequelize, DataTypes);
-db.Cart = require("./cart")(sequelize, DataTypes);
-db.CartItem = require("./cartitem")(sequelize, DataTypes);
-db.Category = require("./category")(sequelize, DataTypes);
-db.Color = require("./color")(sequelize, DataTypes);
-db.DiscountCode = require("./discountcode")(sequelize, DataTypes);
-db.Group = require("./group")(sequelize, DataTypes);
-db.Order = require("./order")(sequelize, DataTypes);
-db.OrderItem = require("./orderitem")(sequelize, DataTypes);
-db.Product = require("./product")(sequelize, DataTypes);
-db.ProductImage = require("./productimage")(sequelize, DataTypes);
-db.ProductItem = require("./productitem")(sequelize, DataTypes);
-db.ProductSpecification = require("./productspecification")(
-  sequelize,
-  DataTypes
-);
-db.ProductVariation = require("./productvariation")(sequelize, DataTypes);
-db.Review = require("./review")(sequelize, DataTypes);
-db.ShippingType = require("./shippingtype")(sequelize, DataTypes);
-db.SizeCategory = require("./sizecategory")(sequelize, DataTypes);
-db.SizeOption = require("./sizeoption")(sequelize, DataTypes);
-db.SpecificationOption = require("./specificationoption")(sequelize, DataTypes);
-db.SubCategory = require("./subcategory")(sequelize, DataTypes);
+//OrderItem Associations
+db.Order.hasMany(db.OrderItem, {
+  foreignKey: "uOrderId",
+  onDelete: "cascade",
+});
+db.ProductItem.hasMany(db.OrderItem, {
+  foreignKey: "uProductItemId",
+});
+db.OrderItem.belongsTo(db.Order, {
+  foreignKey: "uOrderId",
+});
+db.OrderItem.belongsTo(db.ProductItem, {
+  foreignKey: "uProductItemId",
+});
+
+//Review Associations
+db.User.hasMany(db.Review, {
+  foreignKey: "uUserId",
+});
+db.ProductItem.hasMany(db.Review, {
+  foreignKey: "uProductItemId",
+});
+db.Review.belongsTo(db.User, {
+  foreignKey: "uUserId",
+});
+db.Review.belongsTo(db.ProductItem, {
+  foreignKey: "uProductItemId",
+});
 
 module.exports = db;
