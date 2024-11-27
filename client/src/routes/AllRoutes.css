@@ -1,0 +1,7 @@
+.allroutes {
+  flex: 4.5;
+  border: 1px solid blue;
+  padding-top: 80px;
+  width: 100%;
+  /* border: 1px solid blue; */
+}
