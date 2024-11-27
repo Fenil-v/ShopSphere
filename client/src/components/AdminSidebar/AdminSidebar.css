@@ -1,0 +1,12 @@
+.adminsidebar {
+  padding-top: 100px;
+  background-color: #233044;
+  width: 300px;
+  min-height: 100vh;
+  height: 100%;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
