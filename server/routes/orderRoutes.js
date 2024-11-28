@@ -5,7 +5,7 @@ const {
   getUserOrders,
   getSingleOrder,
   generateInvoice,
-} = require("../controllers/orderController");
+} = require("../controller/orderController");
 
 const router = Router();
 

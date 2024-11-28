@@ -3,7 +3,7 @@ const {
   addShippingType,
   updateShippingType,
   deleteShippingType,
-} = require("../controllers/shippingTypeController");
+} = require("../controller/shippingTypeController");
 const { authorizeRoles, isAuthenticatedUser } = require("../middleware/auth");
 
 const { Router } = require("express");

@@ -2,7 +2,7 @@ const stripe = require("stripe")(
   process.env.STRIP_KEY
 );
 
-export async function createPaymentIntent(req, res, next) {
+async function createPaymentIntent(req, res, next) {
   try {
     // Create a PaymentIntent with the order amount and currency
     const paymentIntent = await stripe.paymentIntents.create({
@@ -23,3 +23,5 @@ export async function createPaymentIntent(req, res, next) {
     });
   }
 }
+
+module.exports = {createPaymentIntent}

@@ -3,7 +3,7 @@ const {
   getAllCategories,
   updateCategory,
   deleteCategory,
-} = require("../controllers/categoryController");
+} = require("../controller/categoryController");
 
 const { authorizeRoles, isAuthenticatedUser } = require("../middleware/auth");
 

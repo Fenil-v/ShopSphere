@@ -6,7 +6,7 @@ const {
   getSingleAddress,
   updateAddress,
   deleteAddress,
-} = require("../controllers/addressController");
+} = require("../controller/addressController");
 
 const router = Router();
 

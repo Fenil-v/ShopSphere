@@ -14,6 +14,7 @@ import AllRoutes from "./routes/AllRoutes";
 import AdminSidebar from "./components/AdminSidebar/AdminSidebar";
 import { setOrdersState } from "./redux/features/orderSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
+import baseUrl from "./configs/config";
 
 function App() {
   const userState = useSelector((state) => state.userState);
@@ -29,7 +30,7 @@ function App() {
   const loadUser = async () => {
     try {
       await axios
-        .get("/groups")
+        .get(`${baseUrl}/groups`)
         .then((res) => {
           dispatch(setGroupsState(res.data.groups));
         })
@@ -39,7 +40,7 @@ function App() {
         });
 
       await axios
-        .get("/user/me")
+        .get(`${baseUrl}/user/me`)
         .then((res) => {
           dispatch(login(res.data));
           dispatch(setCartState(res.data.user.Cart));

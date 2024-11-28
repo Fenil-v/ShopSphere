@@ -4,7 +4,7 @@ const {
   updateProduct,
   deleteProduct,
   getSingleProduct,
-} = require("../controllers/productController");
+} = require("../controller/productController");
 const { authorizeRoles, isAuthenticatedUser } = require("../middleware/auth");
 
 const { Router } = require("express");

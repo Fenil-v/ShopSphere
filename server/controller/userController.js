@@ -13,8 +13,6 @@ const ProductItem = db.ProductItem;
 
 exports.signupUser = async (req, res, next) => {
   try {
-    // console.log(req.files);
-    // console.log(req.file);
     const { vName, vEmail, vPassword } = req.body;
 
     const user = await User.findOne({ where: { vEmail } });
@@ -67,7 +65,7 @@ exports.loginUser = async (req, res, next) => {
       return res.status(400).json({
         status: 400,
         success: false,
-        message: "Email or password is wrong",
+        message: "User Not found",
       });
     }
 
@@ -77,7 +75,7 @@ exports.loginUser = async (req, res, next) => {
       return res.status(400).json({
         status: 400,
         success: false,
-        message: "Email or password is wrong",
+        message: "Password is wrong",
       });
     }
 
@@ -178,7 +176,6 @@ exports.getProfile = async (req, res, next) => {
       user,
     });
   } catch (error) {
-    console.log("Error getting profile", error);
     res.status(500).json({
       success: false,
       error: "Internal Server Error",

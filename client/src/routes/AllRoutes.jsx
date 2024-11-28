@@ -25,7 +25,7 @@ import AllGroup from "../pages/admin/categorization/groups/AllGroup/AllGroup";
 import AddCategory from "../pages/admin/categorization/categories/AddCategory/AddCategory";
 import AllCategories from "../pages/admin/categorization/categories/AllCategories/AllCategories";
 import AddSubCategory from "../pages/admin/categorization/subcategories/AddSubCategory/AddSubCategory";
-import AdminDashboard from "../pages/admin/admindashboard/AdminDashboard";
+// import AdminDashboard from "../pages/admin/admindashboard/AdminDashboard";
 
 const AllRoutes = ({ loading }) => {
   return (
@@ -43,7 +43,7 @@ const AllRoutes = ({ loading }) => {
 
         <Route element={<ProtectedRoute loading={loading} />}>
           <Route path="/admin/">
-            <Route path="dashboard" element={<AdminDashboard />} />
+            {/* <Route path="dashboard" element={<AdminDashboard />} /> */}
             <Route path="groups/add" element={<AddGroup />} />
             <Route path="groups/all" element={<AllGroup />} />
             <Route path="categories/add" element={<AddCategory />} />

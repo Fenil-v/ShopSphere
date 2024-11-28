@@ -1,10 +1,10 @@
 const express = require("express");
-const { getProfile, updateProfile } = require("../controllers/userControllers");
+const { getProfile, updateProfile } = require("../controller/userController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 const {
   addReview,
   getProductsReviews,
-} = require("../controllers/reviewController");
+} = require("../controller/reviewController");
 
 const router = express.Router();
 

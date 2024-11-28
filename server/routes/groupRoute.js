@@ -4,7 +4,7 @@ const {
   createGroup,
   getAllGroups,
   deleteGroup,
-} = require("../controllers/groupController");
+} = require("../controller/groupController");
 
 const router = Router();
 

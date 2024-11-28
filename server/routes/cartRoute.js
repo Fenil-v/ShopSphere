@@ -8,7 +8,7 @@ const {
   removeProductFromCart,
   setCartProductQuantity,
   changeShipping,
-} = require("../controllers/cartController");
+} = require("../controller/cartController");
 
 const router = Router();
 

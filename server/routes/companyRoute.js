@@ -1,7 +1,7 @@
 const {
   addCompany,
   getAllCompanies,
-} = require("../controllers/companyController");
+} = require("../controller/companyController");
 const { authorizeRoles, isAuthenticatedUser } = require("../middleware/auth");
 
 const { Router } = require("express");

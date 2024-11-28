@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
-const { addSubCategory } = require("../controllers/subcategoryController");
+const { addSubCategory } = require("../controller/subcategoryController");
 
 const router = Router();
 

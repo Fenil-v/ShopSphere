@@ -16,7 +16,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
 import toast from "react-hot-toast";
 import "./login.css";
-import { baseUrl } from "../../configs/config";
+import  baseUrl from "../../configs/config";
 import { setCartState } from "../../redux/features/cartSlice";
 import { setAddressesState } from "../../redux/features/addressSlice";
 import { setOrdersState } from "../../redux/features/orderSlice";
@@ -40,7 +40,7 @@ const Login = () => {
     setLoading(true);
     await axios
       .post(
-        `/auth/login`,
+        `${baseUrl}/auth/login`,
         { vEmail: email, vPassword: password },
         {
           headers: {
